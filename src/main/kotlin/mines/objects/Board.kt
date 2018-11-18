@@ -183,6 +183,11 @@ data class Board(val sizeX: kotlin.Int, val sizeY: kotlin.Int) {
 	 * 	- Si c'est une Mine -> on passe Mine.visible ï¿½ true -> partie perdue
 	 *	- Si c'est un Nombre -> on l'ouvre 
 	 *	- Si c'est un Vide -> on ouvre toutes les Cellules voisines
+	 *
+	 * !! Une fois la fonction computeFlag() terminée !!
+	 * De plus, si la Cellule est déjà visible, alors on ouvrira toutes les Cellules voisines si :
+	 *	- La Cellule n'est ni une Mine, ni un Vide
+	 *	- Le nombre de mines voisines = le nombre de Cellules avec un flag
 	 */
 	fun clickCellule(posX : kotlin.Int, posY : kotlin.Int) {
 		
@@ -190,7 +195,7 @@ data class Board(val sizeX: kotlin.Int, val sizeY: kotlin.Int) {
 		//		  - on passe son état à visible
 		//		  - si c'est un Vide, on ouvre ses voisins
 		//
-		// Attention : Kotlin n'autorise pas les actions sur une objet null, pensez donc à vérifier que ça ne l'est pas !
+		// Attention : Kotlin n'autorise pas les actions sur un objet null, pensez donc à vérifier que ça ne l'est pas !
 	}
 	
 	/**
